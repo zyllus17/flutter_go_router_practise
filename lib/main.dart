@@ -24,8 +24,14 @@ class MyApp extends StatelessWidget {
   final GoRouter _router = GoRouter(
     initialLocation: "/",
     routes: <GoRoute>[
-      GoRoute(path: "/", builder: (context, state) => const Screen1()),
-      GoRoute(path: "/screen2", builder: (context, state) => const Screen2()),
+      GoRoute(
+        path: "/",
+        builder: (context, state) => const Screen1(),
+        routes: [
+          GoRoute(
+              path: "screen2", builder: (context, state) => const Screen2()),
+        ],
+      ),
     ],
   );
 }
