@@ -29,7 +29,9 @@ class MyApp extends StatelessWidget {
         builder: (context, state) => const Screen1(),
         routes: [
           GoRoute(
-              path: "screen2", builder: (context, state) => const Screen2()),
+            path: "screen2/:name",
+            builder: (context, state) => Screen2(name: state.params["name"]!),
+          ),
         ],
       ),
     ],
