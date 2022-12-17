@@ -11,9 +11,10 @@ class Screen1 extends StatelessWidget {
       ),
       body: Center(
         child: ElevatedButton(
-            onPressed: () =>
-                // GoRouter.of(context).go('/screen2'),
-                context.go('/screen2'),
+            onPressed: () {
+              String name = "Maruf";
+              context.go('/screen2/$name');
+            },
             child: const Text('Screen1')),
       ),
     );
